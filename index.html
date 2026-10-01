@@ -1,165 +1,242 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pistola de Riego 7 Funciones Evergreen</title>
+    <title>PREPTÁCTICA - Preparación Física para Ingreso a Fuerzas Armadas y de Seguridad</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        tactical: {
+                            950: '#070B0A',
+                            900: '#0B1110',
+                            800: '#141E1C',
+                            700: '#1F2E2B',
+                            gold: '#E5A93C',
+                            goldHover: '#C8902A',
+                            accent: '#10B981',
+                            alert: '#EF4444'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        tactical: ['Chakra Petch', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(229, 169, 60, 0.25);
         }
-        .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+        .glow-green {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
         }
-        .cta-button {
-            transition: all 0.3s ease;
+        .glow-alert {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
         }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        }
-        .social-icon:hover {
-            transform: scale(1.1);
+        .tactical-grid {
+            background-image: radial-gradient(#E5A93C 1px, transparent 1px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-tactical-900 text-gray-100 font-sans antialiased selection:bg-tactical-gold selection:text-black">
 
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-green-700">Evergreen</h1>
-            <div class="flex items-center space-x-4">
-                <!-- Iconos de Redes Sociales en el Header -->
-                <a href="#" target="_blank" class="social-icon text-gray-600 hover:text-blue-600 transition-colors">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="https://wa.me/5491141843144" target="_blank" class="social-icon text-gray-600 hover:text-green-500 transition-colors">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM12.04 20.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.26-2.83-1.26-4.38 0-4.54 3.69-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.82-.02 4.54-3.7 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.76 2.68 4.27 3.77 2.51 1.08 2.51.72 2.96.69.45-.03 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.28z" /></svg>
-                </a>
-                <a href="https://wa.me/5491141843144?text=Hola,%20quiero%20comprar%20la%20Pistola%20de%20Riego%20Evergreen." target="_blank" class="cta-button bg-green-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-green-700 text-sm">
-                    Comprar Ahora
-                </a>
+    <header class="sticky top-0 z-50 bg-tactical-950/90 backdrop-blur-md border-b border-tactical-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-tactical-gold to-yellow-600 flex items-center justify-center text-black font-tactical font-bold text-xl shadow-lg">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <span class="font-tactical font-bold text-xl tracking-wider text-white block leading-none">PREP<span class="text-tactical-gold">TÁCTICA</span></span>
+                    <span class="text-[10px] text-gray-400 uppercase tracking-widest block mt-0.5">Alto Rendimiento de Ingreso</span>
+                </div>
             </div>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="#metodo" class="hover:text-tactical-gold transition-colors">Método</a>
+                <a href="#diagnostico" class="hover:text-tactical-gold transition-colors">Diagnóstico</a>
+                <a href="#planes" class="hover:text-tactical-gold transition-colors">Planes</a>
+                <a href="#marcas" class="hover:text-tactical-gold transition-colors">Marcas Mínimas</a>
+                <a href="#faq" class="hover:text-tactical-gold transition-colors">Preguntas</a>
+            </nav>
+
+            <button onclick="openModal('Consulta General')" class="bg-gradient-to-r from-tactical-gold to-yellow-500 hover:from-yellow-500 hover:to-tactical-gold text-black font-tactical font-bold px-5 py-2.5 rounded-lg text-sm flex items-center gap-2 shadow-lg transition-all transform hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>CONSULTAR AHORA</span>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-bg text-white">
-        <div class="bg-black bg-opacity-50">
-            <div class="container mx-auto px-6 py-24 text-center">
-                <h2 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">La Única Pistola de Riego que Necesitarás</h2>
-                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Riego preciso, limpieza potente y cuidado delicado para tu jardín. Todo en una sola mano.</p>
-                <div class="flex justify-center">
-                    <img src="WhatsApp Image 2025-08-16 at 8.48.20 PM.jpeg" alt="Pistola de Riego 7 Funciones Evergreen en su empaque" class="w-auto h-72 object-contain rounded-lg shadow-2xl mb-8">
+    <section class="relative pt-12 pb-20 md:py-28 overflow-hidden border-b border-tactical-700/50">
+        <div class="absolute inset-0 opacity-10 tactical-grid pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-tactical-800 border border-tactical-gold/40 text-tactical-gold text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-crosshairs text-tactical-gold"></i>
+                        <span>Entrenamiento Específico de Ingreso</span>
+                    </div>
+
+                    <h1 class="font-tactical text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                        Superá las pruebas físicas y <span class="text-transparent bg-clip-text bg-gradient-to-r from-tactical-gold via-yellow-400 to-amber-200">asegurá tu vacante.</span>
+                    </h1>
+
+                    <p class="text-gray-300 text-lg sm:text-xl max-w-2xl leading-relaxed">
+                        No dejes tu futuro profesional al azar. Preparación física estratégica personalizada para ingresar al <strong class="text-white">Ejército, Armada, Fuerza Aérea, Policía, Prefectura y Gendarmería</strong>. Sin improvisaciones. Sin miedo a reprobar.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#planes" class="bg-gradient-to-r from-tactical-gold to-yellow-500 hover:from-yellow-500 hover:to-tactical-gold text-black font-tactical font-bold px-8 py-4 rounded-xl text-base flex items-center justify-center gap-3 shadow-xl transition-all transform hover:-translate-y-0.5 glow-gold">
+                            <i class="fa-solid fa-bullseye text-lg"></i>
+                            <span>ELEGIR MI PLAN DE PREPARACIÓN</span>
+                        </a>
+                        <a href="#diagnostico" class="bg-tactical-800 hover:bg-tactical-700 text-white font-medium px-6 py-4 rounded-xl text-base border border-tactical-700 flex items-center justify-center gap-2 transition-colors">
+                            <i class="fa-solid fa-calculator text-tactical-gold"></i>
+                            <span>Test de Diagnóstico Gratis</span>
+                        </a>
+                    </div>
+
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-tactical-800 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <span class="block font-tactical font-bold text-2xl text-tactical-gold">100%</span>
+                            <span class="text-xs text-gray-400">Enfoque en Pruebas Reales</span>
+                        </div>
+                        <div>
+                            <span class="block font-tactical font-bold text-2xl text-white">0%</span>
+                            <span class="text-xs text-gray-400">Riesgo por Lesiones</span>
+                        </div>
+                        <div>
+                            <span class="block font-tactical font-bold text-2xl text-tactical-accent">24/7</span>
+                            <span class="text-xs text-gray-400">Soporte Directo</span>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://wa.me/5491141843144?text=Hola,%20quiero%20comprar%20la%20Pistola%20de%20Riego%20Evergreen." target="_blank" class="cta-button bg-orange-500 text-white font-bold py-4 px-10 text-lg rounded-lg hover:bg-orange-600">
-                    ¡La Quiero!
-                </a>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="bg-gradient-to-b from-tactical-800 to-tactical-950 rounded-3xl p-6 md:p-8 border border-tactical-gold/30 shadow-2xl relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-40 h-40 bg-tactical-gold/10 rounded-full blur-2xl"></div>
+                        <div class="flex items-center justify-between mb-6 border-b border-tactical-700 pb-4">
+                            <h3 class="font-tactical font-bold text-lg text-white uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-shield text-tactical-gold"></i>
+                                Fuerzas Soportadas
+                            </h3>
+                            <span class="text-xs text-tactical-accent font-semibold px-2.5 py-1 rounded-md bg-tactical-accent/10 border border-tactical-accent/30">Programas Oficiales</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-tactical-900/80 border border-tactical-700/60">
+                                <span class="font-medium text-sm text-gray-200"><i class="fa-solid fa-person-military-rifle text-tactical-gold mr-2"></i>Ejército / Armada / Fuerza Aérea</span>
+                                <span class="text-xs text-tactical-gold font-tactical font-bold"><i class="fa-solid fa-check"></i> Activo</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-tactical-900/80 border border-tactical-700/60">
+                                <span class="font-medium text-sm text-gray-200"><i class="fa-solid fa-building-shield text-tactical-gold mr-2"></i>Policía (Federal / Prov. / Ciudad)</span>
+                                <span class="text-xs text-tactical-gold font-tactical font-bold"><i class="fa-solid fa-check"></i> Activo</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-tactical-900/80 border border-tactical-700/60">
+                                <span class="font-medium text-sm text-gray-200"><i class="fa-solid fa-user-shield text-tactical-gold mr-2"></i>Gendarmería Nacional Argentina</span>
+                                <span class="text-xs text-tactical-gold font-tactical font-bold"><i class="fa-solid fa-check"></i> Activo</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-tactical-900/80 border border-tactical-700/60">
+                                <span class="font-medium text-sm text-gray-200"><i class="fa-solid fa-ship text-tactical-gold mr-2"></i>Prefectura Naval Argentina</span>
+                                <span class="text-xs text-tactical-gold font-tactical font-bold"><i class="fa-solid fa-check"></i> Activo</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-tactical-900/80 border border-tactical-700/60">
+                                <span class="font-medium text-sm text-gray-200"><i class="fa-solid fa-lock text-tactical-gold mr-2"></i>Servicio Penitenciario</span>
+                                <span class="text-xs text-tactical-gold font-tactical font-bold"><i class="fa-solid fa-check"></i> Activo</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 rounded-xl bg-tactical-gold/10 border border-tactical-gold/30 text-center">
+                            <p class="text-xs text-tactical-gold font-medium">
+                                <i class="fa-solid fa-triangle-exclamation mr-1"></i>
+                                ¿Tenés el examen pronto? Empezá la planificación estratégica esta semana.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-gray-800">Transforma tu Jardín con 7 Modos de Riego</h3>
-                <p class="text-gray-600 mt-2">Desde una suave neblina para tus flores hasta un chorro potente para la limpieza.</p>
+    <section id="metodo" class="py-20 bg-tactical-800/40 border-b border-tactical-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-tactical-gold font-tactical font-bold text-sm tracking-widest uppercase">Puntos Críticos</span>
+                <h2 class="font-tactical text-3xl sm:text-4xl font-bold text-white mt-2">
+                    ¿ENTRENÁS DURO PERO NO SABÉS SI LLEGÁS A LAS MARCAS MÍNIMAS?
+                </h2>
+                <p class="text-gray-300 text-base sm:text-lg mt-3">
+                    La mayoría de los aspirantes fracasan por cometer el mismo error: entrenar con rutinas genéricas de gimnasio o copiar entrenamientos de internet sin considerar la técnica exacta reglamentaria.
+                </p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 text-center">
-                <!-- Feature 1: Chorro -->
-                <div class="p-4">
-                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Problema -->
+                <div class="bg-tactical-950 p-8 rounded-2xl border border-red-500/30 relative">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center font-bold text-xl mb-6 border border-red-500/20">
+                        <i class="fa-solid fa-xmark"></i>
                     </div>
-                    <h4 class="font-bold text-lg text-gray-700">Chorro</h4>
-                    <p class="text-gray-500 text-sm">Limpieza profunda y concentrada.</p>
-                </div>
-                <!-- Feature 2: Completo -->
-                <div class="p-4">
-                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 12v.01"/></svg>
-                    </div>
-                    <h4 class="font-bold text-lg text-gray-700">Completo</h4>
-                    <p class="text-gray-500 text-sm">Riego abundante y rápido.</p>
-                </div>
-                <!-- Feature 3: Neblina -->
-                <div class="p-4">
-                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M2 12a10 10 0 1 1 20 0c0 4.97-3.58 9.1-8.25 9.87.24-.2.48-.4.7-.62.22-.22.43-.45.64-.7.14-.17.28-.34.4-.52.13-.18.25-.37.36-.57.1-.18.18-.38.25-.58.07-.2.13-.4.18-.6.05-.2.08-.4.1-.6.03-.2.04-.4.04-.6v-.8c0-.2-.01-.4-.04-.6 0-.2-.05-.4-.1-.6-.05-.2-.11-.4-.18-.6-.07-.2-.15-.4-.25-.58-.1-.2-.23-.39-.36-.57-.12-.18-.26-.35-.4-.52-.2-.25-.42-.48-.64-.7-.22-.22-.46-.42-.7-.62A9.94 9.94 0 0 0 12 2a10 10 0 0 0-9.75 11.87 9.95 9.95 0 0 0 .7 1.25c.22.22.45.43.7.64.17.14.34.28.52.4.18.13.37.25.57.36.18.1.38.18.58.25.2.07.4.13.6.18.2.05.4.08.6.1.2.03.4.04.6.04h.8c.2 0 .4-.01.6-.04.2 0 .4-.05.6-.1.2-.05.4-.11.6-.18.2-.07.4-.15.58-.25.2-.1.39-.23.57-.36.18-.12.35-.26.52-.4.25-.2.48-.42.7-.64.22-.22.42-.46.62-.7z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-lg text-gray-700">Neblina</h4>
-                    <p class="text-gray-500 text-sm">Fina, para plantas delicadas.</p>
-                </div>
-                <!-- Feature 4: Ducha -->
-                <div class="p-4">
-                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M12 14v8"/><path d="M12 2a10 10 0 0 0-10 10c0 3.31 1.68 6.26 4.22 8"/><path d="M12 2a10 10 0 0 1 10 10c0 3.31-1.68 6.26-4.22 8"/></svg>
-                    </div>
-                    <h4 class="font-bold text-lg text-gray-700">Ducha</h4>
-                    <p class="text-gray-500 text-sm">Lluvia suave para césped.</p>
-                </div>
-                <!-- Feature 5: Plano -->
-                <div class="p-4">
-                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
-                    </div>
-                    <h4 class="font-bold text-lg text-gray-700">Plano</h4>
-                    <p class="text-gray-500 text-sm">Chorro plano para barrer hojas.</p>
-                </div>
-                <!-- Feature 6: Cono -->
-                <div class="p-4">
-                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-lg text-gray-700">Cono</h4>
-                    <p class="text-gray-500 text-sm">Riego en cono para áreas amplias.</p>
-                </div>
-                <!-- Feature 7: Central -->
-                <div class="p-4">
-                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="10"/></svg>
-                    </div>
-                    <h4 class="font-bold text-lg text-gray-700">Central</h4>
-                    <p class="text-gray-500 text-sm">Chorro central para macetas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Quality and Durability Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <img src="https://github.com/metodmarinas/evergreen/blob/main/WhatsApp%20Image%202025-08-16%20at%208.48.20%20PM.jpeg?raw=true" alt="Construcción robusta de la pistola de riego" class="rounded-lg shadow-xl w-full" >
-                </div>
-                <div class="md:w-1/2">
-                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Diseñada para Durar</h3>
-                    <p class="text-gray-600 mb-6">No más pistolas de plástico que se rompen al primer uso. La pistola Evergreen está construida con materiales de alta calidad para resistir el uso diario y las condiciones del exterior.</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="bg-green-500 text-white rounded-full w-6 h-6 text-center mr-4 mt-1">&#10003;</span>
-                            <span class="text-gray-700">Cuerpo metálico robusto y resistente a la corrosión.</span>
+                    <h3 class="font-tactical text-xl font-bold text-white mb-4">El Error Común (Camino al Rechazo)</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-exclamation text-red-500 mt-1"></i>
+                            <span><strong>Sin especificidad:</strong> Entrenar para hipertrofia estética en vez de resistencia metabólica y fuerza relativa para la prueba.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="bg-green-500 text-white rounded-full w-6 h-6 text-center mr-4 mt-1">&#10003;</span>
-                            <span class="text-gray-700">Mango ergonómico de goma para un agarre cómodo y antideslizante.</span>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-exclamation text-red-500 mt-1"></i>
+                            <span><strong>Técnica defectuosa:</strong> Descuento masivo de repeticiones por evaluadores por no romper los 90° o no extender los brazos completamente.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="bg-green-500 text-white rounded-full w-6 h-6 text-center mr-4 mt-1">&#10003;</span>
-                            <span class="text-gray-700">Gatillo con traba para un flujo de agua continuo sin esfuerzo.</span>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-exclamation text-red-500 mt-1"></i>
+                            <span><strong>Sobreentrenamiento y Lesiones:</strong> Llegar fatigado, con periostitis o contracturas en la semana del examen.</span>
                         </li>
-                         <li class="flex items-start">
-                            <span class="bg-green-500 text-white rounded-full w-6 h-6 text-center mr-4 mt-1">&#10003;</span>
-                            <span class="text-gray-700">Incluye acoples rápidos para una conexión fácil y sin fugas.</span>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-exclamation text-red-500 mt-1"></i>
+                            <span><strong>Mala dosificación del ritmo:</strong> Salir picando a máxima velocidad en los 12 minutos y quedarse sin aire al minuto 4.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solución -->
+                <div class="bg-tactical-950 p-8 rounded-2xl border border-tactical-gold/40 relative glow-gold">
+                    <div class="w-12 h-12 rounded-xl bg-tactical-gold/20 text-tactical-gold flex items-center justify-center font-bold text-xl mb-6 border border-tactical-gold/30">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="font-tactical text-xl font-bold text-white mb-4">Nuestro Método Táctico (Estrategia de Éxito)</h3>
+                    <ul class="space-y-4 text-gray-300 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-tactical-gold mt-1"></i>
+                            <span><strong>Evaluación Biomecánica Inicial:</strong> Diagnóstico exacto de tu fuerza relativa y capacidad aeróbica actual.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-tactical-gold mt-1"></i>
+                            <span><strong>Corrección Técnica Estricta por Video:</strong> Aseguramos que cada repetición cumpla el reglamento reglamentario oficial.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-tactical-gold mt-1"></i>
+                            <span><strong>Planificación Cíclica de Cargas:</strong> Descansos programados para que rindas al máximo el día exacto de la prueba.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-tactical-gold mt-1"></i>
+                            <span><strong>Simulacros con Cronómetro Oficial:</strong> Gestión táctica del ritmo de carrera y control del estrés de evaluación.</span>
                         </li>
                     </ul>
                 </div>
@@ -167,55 +244,507 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-16 bg-green-700 text-white">
-        <div class="container mx-auto px-6">
+    <section id="diagnostico" class="py-20 bg-tactical-900 border-b border-tactical-700/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-tactical-800 rounded-3xl p-6 sm:p-10 border border-tactical-gold/30 shadow-2xl">
+                <div class="text-center mb-8">
+                    <span class="text-tactical-gold font-tactical font-bold text-sm tracking-wider uppercase">Herramienta Interactiva</span>
+                    <h2 class="font-tactical text-2xl sm:text-3xl font-bold text-white mt-1">TEST DE AUTOEVALUACIÓN DE INGRESO</h2>
+                    <p class="text-gray-400 text-sm mt-2">Ingresá tus números actuales para evaluar tu nivel de preparación estimado.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Fuerza a la que aspirás</label>
+                        <select id="diag-fuerza" class="w-full bg-tactical-950 border border-tactical-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-tactical-gold">
+                            <option value="Ejército / Fuerzas Armadas">Ejército Argentino / Fuerzas Armadas</option>
+                            <option value="Policía (Federal / Provincial / Ciudad)">Policía (Federal / Provincial / Ciudad)</option>
+                            <option value="Gendarmería Nacional">Gendarmería Nacional</option>
+                            <option value="Prefectura Naval">Prefectura Naval</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Semanas faltantes para el examen</label>
+                        <select id="diag-tiempo" class="w-full bg-tactical-950 border border-tactical-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-tactical-gold">
+                            <option value="Menos de 4 semanas">Menos de 4 semanas (URGENTE)</option>
+                            <option value="1 a 2 meses">1 a 2 meses</option>
+                            <option value="3 a 6 meses">3 a 6 meses</option>
+                            <option value="+6 meses">+6 meses (Planificación Ideal)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Flexiones de brazo máximas (de corrido)</label>
+                        <input type="number" id="diag-flexiones" placeholder="Ej: 20" class="w-full bg-tactical-950 border border-tactical-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-tactical-gold">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Metros recorridos en 12 min (Cooper)</label>
+                        <input type="number" id="diag-cooper" placeholder="Ej: 2100" class="w-full bg-tactical-950 border border-tactical-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-tactical-gold">
+                    </div>
+                </div>
+
+                <button onclick="calcularDiagnostico()" class="w-full bg-gradient-to-r from-tactical-gold to-yellow-500 hover:from-yellow-500 hover:to-tactical-gold text-black font-tactical font-bold py-4 rounded-xl text-base shadow-lg transition-all transform hover:scale-[1.01]">
+                    EVALUAR MI NIVEL Y RECOMENDACIÓN
+                </button>
+
+                <!-- Resultado del test -->
+                <div id="resultado-diag" class="hidden mt-8 p-6 rounded-2xl bg-tactical-950 border border-tactical-700 text-center">
+                    <div id="diag-badge" class="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-3"></div>
+                    <h4 id="diag-titulo" class="font-tactical text-xl font-bold text-white mb-2"></h4>
+                    <p id="diag-desc" class="text-gray-300 text-sm max-w-xl mx-auto mb-6"></p>
+                    <button id="diag-btn-cta" onclick="" class="bg-tactical-gold text-black font-tactical font-bold px-6 py-3 rounded-xl text-sm hover:bg-yellow-400 transition-colors">
+                        SOLICITAR MI PLAN RECOMENDADO VÍA WHATSAPP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planes" class="py-24 bg-tactical-800/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-tactical-gold font-tactical font-bold text-sm tracking-widest uppercase">Planes de Entrenamiento</span>
+                <h2 class="font-tactical text-3xl sm:text-5xl font-extrabold text-white mt-2">ELEGÍ TU NIVEL DE ACOMPAÑAMIENTO</h2>
+                <p class="text-gray-300 text-base sm:text-lg mt-3">Estructura adaptada al tiempo que tenés disponible para asegurar la nota mínima requerida.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- PLAN 1: RUTINA EXPRESS -->
+                <div class="bg-tactical-950 rounded-3xl p-8 border border-tactical-700 flex flex-col justify-between hover:border-tactical-gold/30 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-tactical font-bold text-gray-400 tracking-wider uppercase">PLAN 1</span>
+                            <span class="px-3 py-1 rounded-full bg-tactical-800 text-gray-300 text-xs font-semibold border border-tactical-700">Autónomo</span>
+                        </div>
+                        <h3 class="font-tactical text-2xl font-bold text-white mb-2">Rutina Express</h3>
+                        <p class="text-gray-400 text-xs min-h-[36px]">Ideal para quienes solo necesitan una guía estructurada para entrenar por su cuenta sin correcciones.</p>
+                        
+                        <div class="my-6 border-y border-tactical-800 py-4">
+                            <div class="flex items-baseline gap-1">
+                                <span class="font-tactical text-4xl font-extrabold text-white">$30.000</span>
+                                <span class="text-gray-400 text-sm">/ mes</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-gray-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-tactical-accent mt-0.5"></i>
+                                <span><strong>Diagnóstico inicial</strong> para evaluar tu punto de partida.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-tactical-accent mt-0.5"></i>
+                                <span><strong>Planificación de entrenamiento en PDF</strong> según nivel.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5 text-gray-500 line-through">
+                                <i class="fa-solid fa-xmark text-red-500/60 mt-0.5"></i>
+                                <span>Sin seguimiento individual.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5 text-gray-500 line-through">
+                                <i class="fa-solid fa-xmark text-red-500/60 mt-0.5"></i>
+                                <span>Sin corrección de técnica por video.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5 text-gray-500 line-through">
+                                <i class="fa-solid fa-xmark text-red-500/60 mt-0.5"></i>
+                                <span>Sin simulacros oficiales.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openModal('Plan 1: Rutina Express')" class="w-full bg-tactical-800 hover:bg-tactical-700 text-white font-tactical font-bold py-3.5 rounded-xl border border-tactical-700 transition-colors text-sm">
+                        ELEGIR PLAN EXPRESS
+                    </button>
+                </div>
+
+                <!-- PLAN 2: PROGRAMA ACOMPAÑADO (DESTACADO / EL MÁS VENDIDO) -->
+                <div class="bg-gradient-to-b from-tactical-800 via-tactical-900 to-tactical-950 rounded-3xl p-8 border-2 border-tactical-gold relative flex flex-col justify-between glow-gold transform lg:-translate-y-3">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-tactical-gold to-yellow-500 text-black font-tactical font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                        ⭐ EL MÁS ELEGIDO POR ASPIRANTES
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-4 mt-2">
+                            <span class="text-xs font-tactical font-bold text-tactical-gold tracking-wider uppercase">PLAN 2</span>
+                            <span class="px-3 py-1 rounded-full bg-tactical-gold/20 text-tactical-gold text-xs font-bold border border-tactical-gold/40">Recomendado</span>
+                        </div>
+                        <h3 class="font-tactical text-3xl font-bold text-white mb-2">Programa Acompañado</h3>
+                        <p class="text-gray-300 text-xs min-h-[36px]">Garantizá tu progreso semanal y corregí fallas biomecánicas antes de que te cuesten la vacante.</p>
+                        
+                        <div class="my-6 border-y border-tactical-700 py-4">
+                            <div class="flex items-baseline gap-1">
+                                <span class="font-tactical text-4xl font-extrabold text-tactical-gold">CONSULTAR</span>
+                                <span class="text-gray-300 text-sm">/ cupos limitados</span>
+                            </div>
+                            <span class="text-[11px] text-tactical-accent block mt-1"><i class="fa-solid fa-fire mr-1"></i>Cupos reducidos para asegurar seguimiento directo.</span>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-gray-200 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-tactical-gold mt-0.5"></i>
+                                <span><strong>Diagnóstico completo y plan personalizado.</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-tactical-gold mt-0.5"></i>
+                                <span><strong>Ajustes semanales</strong> según tu progreso real.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-tactical-gold mt-0.5"></i>
+                                <span><strong>Corrección de técnica vía WhatsApp</strong> (envío y análisis de videos).</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-tactical-gold mt-0.5"></i>
+                                <span><strong>Soporte constante de dudas</strong> de Lunes a Viernes.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-tactical-gold mt-0.5"></i>
+                                <span>Prevención activa de dolores musculares y lesiones.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openModal('Plan 2: Programa Acompañado')" class="w-full bg-gradient-to-r from-tactical-gold to-yellow-500 hover:from-yellow-500 hover:to-tactical-gold text-black font-tactical font-extrabold py-4 rounded-xl text-base shadow-xl transition-all transform hover:scale-[1.02]">
+                        ASEGURAR MI LUGAR AHORA
+                    </button>
+                </div>
+
+                <!-- PLAN 3: PACK OBJETIVO APROBADO -->
+                <div class="bg-tactical-950 rounded-3xl p-8 border border-tactical-700 flex flex-col justify-between hover:border-tactical-gold/30 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-tactical font-bold text-gray-400 tracking-wider uppercase">PLAN 3</span>
+                            <span class="px-3 py-1 rounded-full bg-tactical-accent/10 text-tactical-accent text-xs font-semibold border border-tactical-accent/30">VIP / Garantía Total</span>
+                        </div>
+                        <h3 class="font-tactical text-2xl font-bold text-white mb-2">Pack Objetivo APROBADO</h3>
+                        <p class="text-gray-400 text-xs min-h-[36px]">Para quienes no se permiten margen de error y quieren simular la prueba antes de rendir.</p>
+                        
+                        <div class="my-6 border-y border-tactical-800 py-4">
+                            <div class="flex items-baseline gap-1">
+                                <span class="font-tactical text-4xl font-extrabold text-white">CONSULTAR</span>
+                                <span class="text-gray-400 text-sm">/ preparación integral</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3.5 text-sm text-gray-300 mb-8">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-tactical-accent mt-0.5"></i>
+                                <span><strong>Todo lo del Plan Acompañado.</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-tactical-accent mt-0.5"></i>
+                                <span><strong>Simulacro de examen físico online</strong> al final de cada mes con tiempos reales.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-tactical-accent mt-0.5"></i>
+                                <span><strong>Guía de hábitos, descanso y nutrición estratégica</strong> para el día de la prueba.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-tactical-accent mt-0.5"></i>
+                                <span><strong>Prioridad de respuesta en WhatsApp.</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openModal('Plan 3: Pack Objetivo APROBADO')" class="w-full bg-tactical-800 hover:bg-tactical-700 text-white font-tactical font-bold py-3.5 rounded-xl border border-tactical-700 transition-colors text-sm">
+                        QUIERO PREPARACIÓN COMPLETA
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="marcas" class="py-20 bg-tactical-900 border-t border-tactical-700/50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold">Lo que Dicen Nuestros Clientes Satisfechos</h3>
+                <span class="text-tactical-gold font-tactical font-bold text-sm tracking-widest uppercase">Referencia de Examen</span>
+                <h2 class="font-tactical text-3xl font-bold text-white mt-1">MARCAS FÍSICAS MÍNIMAS ESTIMADAS</h2>
+                <p class="text-gray-400 text-sm mt-2">Seleccioná la institución para ver los parámetros promedio de evaluación de ingreso.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-green-800 p-6 rounded-lg shadow-lg">
-                    <p class="italic mb-4">"¡La mejor pistola de riego que he tenido! Es súper robusta y las 7 funciones son realmente útiles. La uso para todo, desde regar mis rosales hasta limpiar el auto."</p>
-                    <p class="font-bold">- Carlos G.</p>
+
+            <!-- Tabs de fuerzas -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8" id="tab-buttons">
+                <button onclick="switchTab('ejercito')" id="tab-ejercito" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-tactical font-bold border transition-all bg-tactical-gold text-black border-tactical-gold">
+                    Ejército / FF.AA.
+                </button>
+                <button onclick="switchTab('policia')" id="tab-policia" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-tactical font-bold border border-tactical-700 bg-tactical-800 text-gray-300 hover:border-tactical-gold">
+                    Policía Federal / Prov.
+                </button>
+                <button onclick="switchTab('gendarmeria')" id="tab-gendarmeria" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-tactical font-bold border border-tactical-700 bg-tactical-800 text-gray-300 hover:border-tactical-gold">
+                    Gendarmería Nacional
+                </button>
+                <button onclick="switchTab('prefectura')" id="tab-prefectura" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-tactical font-bold border border-tactical-700 bg-tactical-800 text-gray-300 hover:border-tactical-gold">
+                    Prefectura Naval
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="bg-tactical-800 rounded-2xl p-6 border border-tactical-700 shadow-xl" id="tab-content">
+                <!-- Se actualiza con JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-tactical-800/40 border-t border-tactical-700/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-tactical text-3xl font-bold text-white">PREGUNTAS FRECUENTES</h2>
+                <p class="text-gray-400 text-sm mt-1">Resolvemos tus dudas antes de comenzar el entrenamiento.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-tactical-950 rounded-xl border border-tactical-700 p-5">
+                    <button onclick="toggleFaq('faq-1')" class="w-full flex justify-between items-center text-left font-tactical font-bold text-white text-base">
+                        <span>¿Serviría el programa si estoy empezando totalmente desde cero?</span>
+                        <i class="fa-solid fa-chevron-down text-tactical-gold"></i>
+                    </button>
+                    <p id="faq-1" class="hidden text-gray-300 text-sm mt-3 leading-relaxed border-t border-tactical-800 pt-3">
+                        Sí, totalmente. El diagnóstico inicial sirve para determinar tus niveles actuales de fuerza muscular y resistencia aeróbica. Ajustamos las cargas de manera progresiva para no sobrecargarte y garantizar que subas tus marcas semana a semana.
+                    </p>
                 </div>
-                <div class="bg-green-800 p-6 rounded-lg shadow-lg">
-                    <p class="italic mb-4">"Me encanta el agarre que tiene, es muy cómoda. Se nota la calidad de los materiales. La recomiendo totalmente. El envío fue rapidísimo."</p>
-                    <p class="font-bold">- Mariana P.</p>
+
+                <div class="bg-tactical-950 rounded-xl border border-tactical-700 p-5">
+                    <button onclick="toggleFaq('faq-2')" class="w-full flex justify-between items-center text-left font-tactical font-bold text-white text-base">
+                        <span>¿Cómo funciona la corrección de técnica por WhatsApp?</span>
+                        <i class="fa-solid fa-chevron-down text-tactical-gold"></i>
+                    </button>
+                    <p id="faq-2" class="hidden text-gray-300 text-sm mt-3 leading-relaxed border-t border-tactical-800 pt-3">
+                        Nos enviás un video corto ejecutando la prueba (por ejemplo, flexiones o dominadas). Analizamos los ángulos de codo, posición de cadera, rango de recorrido y postura. Te devolvemos un feedback con las correcciones necesarias para evitar que los evaluadores te anulen repeticiones.
+                    </p>
                 </div>
-                <div class="bg-green-800 p-6 rounded-lg shadow-lg">
-                    <p class="italic mb-4">"Excelente producto. El modo 'chorro' tiene una presión increíble, me sirve hasta para limpiar la vereda. Una compra que vale la pena."</p>
-                    <p class="font-bold">- Jorge L.</p>
+
+                <div class="bg-tactical-950 rounded-xl border border-tactical-700 p-5">
+                    <button onclick="toggleFaq('faq-3')" class="w-full flex justify-between items-center text-left font-tactical font-bold text-white text-base">
+                        <span>¿Necesito ir obligatoriamente a un gimnasio?</span>
+                        <i class="fa-solid fa-chevron-down text-tactical-gold"></i>
+                    </button>
+                    <p id="faq-3" class="hidden text-gray-300 text-sm mt-3 leading-relaxed border-t border-tactical-800 pt-3">
+                        No es estrictamente necesario. Las pruebas físicas de ingreso son predominantemente con autocarga corporal (calistenia, flexiones, abdominales, dominadas y carrera). Se puede adaptar el plan para parques o casa con equipo mínimo.
+                    </p>
+                </div>
+
+                <div class="bg-tactical-950 rounded-xl border border-tactical-700 p-5">
+                    <button onclick="toggleFaq('faq-4')" class="w-full flex justify-between items-center text-left font-tactical font-bold text-white text-base">
+                        <span>¿Cuánto tiempo antes debería empezar a entrenar?</span>
+                        <i class="fa-solid fa-chevron-down text-tactical-gold"></i>
+                    </button>
+                    <p id="faq-4" class="hidden text-gray-300 text-sm mt-3 leading-relaxed border-t border-tactical-800 pt-3">
+                        Lo ideal son entre 2 a 4 meses antes del examen para lograr adaptaciones sólidas. Si tenés menos tiempo (por ejemplo, 3 o 4 semanas), aplicamos un plan intensivo de optimización urgente.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section id="comprar" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="text-4xl font-bold text-gray-800 mb-4">¡No esperes más para tener el jardín que siempre quisiste!</h3>
-            <p class="text-gray-600 text-xl mb-8">Stock limitado. ¡Asegura la tuya hoy mismo!</p>
-            <div class="bg-gray-100 max-w-lg mx-auto p-8 rounded-xl shadow-lg border">
-                <h4 class="text-2xl font-bold text-gray-800 mb-2">Pistola de Riego 7 Funciones Evergreen</h4>
-                <p class="text-4xl font-bold text-green-600 mb-6">$8.000</p>
-                <p class="text-gray-500 mb-6"><strong>¡Oferta de Lanzamiento!</strong> Envío GRATIS a todo el país.</p>
-                <a href="https://wa.me/5491141843144?text=Hola,%20quiero%20comprar%20la%20Pistola%20de%20Riego%20Evergreen." target="_blank" class="cta-button block w-full bg-green-600 text-white font-bold py-4 px-10 text-xl rounded-lg hover:bg-green-700">
-                    COMPRAR POR WHATSAPP
-                </a>
-                <div class="mt-4 text-sm text-gray-500">
-                    <p>Compra segura | Garantía de 30 días</p>
+    <footer class="bg-tactical-950 border-t border-tactical-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-tactical-gold text-black flex items-center justify-center font-tactical font-bold">
+                    <i class="fa-solid fa-shield-halved"></i>
                 </div>
+                <span class="font-tactical font-bold text-lg text-white">PREP<span class="text-tactical-gold">TÁCTICA</span></span>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Evergreen. Todos los derechos reservados.</p>
-            <p class="text-sm text-gray-400 mt-2">Contacto: ventas@evergreen.com</p>
+            <p class="text-gray-400 text-xs max-w-lg mx-auto mb-6">
+                Especialistas en acondicionamiento físico táctico y preparación biomecánica para exámenes de ingreso a Fuerzas Armadas y de Seguridad.
+            </p>
+            <p class="text-gray-600 text-xs">
+                &copy; <span id="year"></span> PREPTÁCTICA - Todos los derechos reservados.
+            </p>
         </div>
     </footer>
 
+    <div id="lead-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-tactical-800 rounded-3xl max-w-md w-full p-6 sm:p-8 border border-tactical-gold/40 shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-tactical-gold/20 text-tactical-gold flex items-center justify-center mx-auto mb-3 font-bold text-xl">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3 class="font-tactical text-2xl font-bold text-white">CONSULTA DIRECTA</h3>
+                <p id="modal-plan-title" class="text-tactical-gold text-xs font-semibold uppercase tracking-wider mt-1"></p>
+            </div>
+
+            <form onsubmit="sendWhatsApp(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Tu Nombre Completo</label>
+                    <input type="text" id="user-name" required placeholder="Ej: Marcos Rodríguez" class="w-full bg-tactical-950 border border-tactical-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-tactical-gold">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Fuerza u Organismo de Ingreso</label>
+                    <input type="text" id="user-force" required placeholder="Ej: Ejército, Policía Bonaerense, GNA" class="w-full bg-tactical-950 border border-tactical-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-tactical-gold">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Fecha estimada de examen</label>
+                    <input type="text" id="user-date" placeholder="Ej: En un mes / Noviembre" class="w-full bg-tactical-950 border border-tactical-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-tactical-gold">
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-tactical-gold to-yellow-500 hover:from-yellow-500 hover:to-tactical-gold text-black font-tactical font-bold py-3.5 rounded-xl text-base shadow-lg transition-all flex items-center justify-center gap-2 mt-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>ABRIR WHATSAPP</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        let currentPlanSelected = "Consulta General";
+
+        // Configuración de pestañas de marcas de fuerzas
+        const dataMarcas = {
+            ejercito: {
+                titulo: "Ejército Argentino & Fuerzas Armadas",
+                items: [
+                    { prueba: "Carrera 12 Minutos (Cooper)", rango: "2.200m - 2.800m según escala", exigencia: "Alta" },
+                    { prueba: "Flexiones de Brazo", rango: "25 a 45 repeticiones en 1 min", exigencia: "Media-Alta" },
+                    { prueba: "Abdominales", rango: "35 a 55 repeticiones en 1 min", exigencia: "Media" },
+                    { prueba: "Dominadas en Barra / Suspensión", rango: "5 a 12 repeticiones estricta técnica", exigencia: "Alta" }
+                ]
+            },
+            policia: {
+                titulo: "Policías (Federal / Provincial / Ciudad)",
+                items: [
+                    { prueba: "Carrera de Resistencia", rango: "1.000m a 2.400m por tiempo", exigencia: "Media" },
+                    { prueba: "Sprint Velocidad", rango: "100m llanos contra reloj", exigencia: "Alta" },
+                    { prueba: "Flexo-Extensiones de Codo", rango: "20 a 40 repeticiones", exigencia: "Media" },
+                    { prueba: "Circuito de Agilidad y Coordinación", rango: "Completar sin derribar obstáculos", exigencia: "Alta" }
+                ]
+            },
+            gendarmeria: {
+                titulo: "Gendarmería Nacional Argentina",
+                items: [
+                    { prueba: "Test de Cooper (12 Min)", rango: "2.300m a 2.700m mínimo", exigencia: "Alta" },
+                    { prueba: "Flexiones de Brazos", rango: "30 a 50 repeticiones", exigencia: "Alta" },
+                    { prueba: "Abdominales continuos", rango: "40 a 60 en 60 segundos", exigencia: "Media" },
+                    { prueba: "Natación / Salto (Según especialidad)", rango: "Prueba utilitaria de desplazamiento", exigencia: "Variable" }
+                ]
+            },
+            prefectura: {
+                titulo: "Prefectura Naval Argentina",
+                items: [
+                    { prueba: "Natación Estilo Libre", rango: "50m a 100m sin pausa", exigencia: "Muy Alta" },
+                    { prueba: "Test de Cooper (12 Min)", rango: "2.200m a 2.600m", exigencia: "Alta" },
+                    { prueba: "Flexiones de Codo", rango: "25 a 40 repeticiones", exigencia: "Media" },
+                    { prueba: "Abdominales", rango: "35 a 50 repeticiones", exigencia: "Media" }
+                ]
+            }
+        };
+
+        function renderTabContent(key) {
+            const info = dataMarcas[key];
+            let html = `
+                <h3 class="font-tactical text-xl font-bold text-white mb-4 border-b border-tactical-700 pb-2">${info.titulo}</h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+            `;
+
+            info.items.forEach(item => {
+                html += `
+                    <div class="bg-tactical-950 p-4 rounded-xl border border-tactical-700/60">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="font-tactical font-bold text-white text-sm">${item.prueba}</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-tactical-gold/20 text-tactical-gold">${item.exigencia}</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Marca estimada requerida:</p>
+                        <p class="text-sm font-semibold text-tactical-accent mt-0.5">${item.rango}</p>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+            document.getElementById('tab-content').innerHTML = html;
+        }
+
+        function switchTab(key) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-tactical-gold', 'text-black', 'border-tactical-gold');
+                btn.classList.add('bg-tactical-800', 'text-gray-300', 'border-tactical-700');
+            });
+
+            const activeBtn = document.getElementById(`tab-${key}`);
+            activeBtn.classList.remove('bg-tactical-800', 'text-gray-300', 'border-tactical-700');
+            activeBtn.classList.add('bg-tactical-gold', 'text-black', 'border-tactical-gold');
+
+            renderTabContent(key);
+        }
+
+        // Diagnóstico interactivo
+        function calcularDiagnostico() {
+            const flexiones = parseInt(document.getElementById('diag-flexiones').value) || 0;
+            const cooper = parseInt(document.getElementById('diag-cooper').value) || 0;
+            const tiempo = document.getElementById('diag-tiempo').value;
+            const fuerza = document.getElementById('diag-fuerza').value;
+
+            const resDiv = document.getElementById('resultado-diag');
+            const badge = document.getElementById('diag-badge');
+            const titulo = document.getElementById('diag-titulo');
+            const desc = document.getElementById('diag-desc');
+            const btn = document.getElementById('diag-btn-cta');
+
+            resDiv.classList.remove('hidden');
+
+            if (flexiones < 20 || cooper < 2100 || tiempo.includes('Menos de 4')) {
+                badge.className = "inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-3 bg-red-500/20 text-red-400 border border-red-500/40";
+                badge.textContent = "ALTO RIESGO DE REPROBAR";
+                titulo.textContent = "Urgente: Requerís Entrenamiento Específico Inmediato";
+                desc.textContent = `Tus marcas actuales (${flexiones} flexiones / ${cooper}m) están por debajo del margen seguro para ${fuerza}. Te recomendamos ingresar cuanto antes al Plan 2 (Programa Acompañado) o Plan 3 para no arriesgar tu vacante.`;
+                btn.setAttribute("onclick", `openModal('Urgente por Diagnóstico - ${fuerza}')`);
+            } else if (flexiones < 35 || cooper < 2500) {
+                badge.className = "inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-3 bg-yellow-500/20 text-tactical-gold border border-tactical-gold/40";
+                badge.textContent = "NIVEL INTERMEDIO (MARCA LÍMITE)";
+                titulo.textContent = "Estás cerca pero sin margen de error";
+                desc.textContent = `Podrías aprobar con lo justo, pero en el examen real la fatiga y los nervios bajan los números un 15%. Con el Plan 2: Programa Acompañado podés asegurar holgadamente las marcas.`;
+                btn.setAttribute("onclick", `openModal('Plan 2: Programa Acompañado - Diagnóstico Intermedio')`);
+            } else {
+                badge.className = "inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-3 bg-green-500/20 text-tactical-accent border border-tactical-accent/40";
+                badge.textContent = "BUENA BASE FÍSICA";
+                titulo.textContent = "Excelente punto de partida";
+                desc.textContent = `Tenés buen nivel relativo. Ahora el objetivo principal es pulir la técnica exacta según el reglamento para que los evaluadores no te descuenten repeticiones.`;
+                btn.setAttribute("onclick", `openModal('Ajuste de Técnica - Diagnóstico Alto')`);
+            }
+        }
+
+        // FAQs Accordion
+        function toggleFaq(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('hidden');
+        }
+
+        // Modal y WhatsApp Directo
+        function openModal(planName) {
+            currentPlanSelected = planName;
+            document.getElementById('modal-plan-title').textContent = `Seleccionado: ${planName}`;
+            document.getElementById('lead-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('lead-modal').classList.add('hidden');
+        }
+
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value;
+            const force = document.getElementById('user-force').value;
+            const date = document.getElementById('user-date').value;
+
+            // Colocar el número de teléfono con código de país sin espacios
+            const phoneNumber = "5491112345678"; 
+
+            const text = `Hola! Mi nombre es *${name}*. Quiero ingresar a *${force}* (Fecha estimada examen: *${date}*). Me interesa consultar sobre el *${currentPlanSelected}*. ¿Me podrías dar más detalles para comenzar?`;
+            
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+            closeModal();
+        }
+
+        // Cargar primera pestaña al iniciar
+        renderTabContent('ejercito');
+    </script>
 </body>
 </html>
