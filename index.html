@@ -224,7 +224,7 @@
         // CONFIGURACIÓN DE WHATSAPP (Editá tu número acá)
         // Formato: 549 + código de área + número (sin + ni espacios)
         // ==========================================
-        let WHATSAPP_NUMBER = localStorage.getItem('pausapay_wa') || "5491171091307";
+        let WHATSAPP_NUMBER = localStorage.getItem('MP_wa') || "5491171091307";
 
         function openWhatsAppPurchase() {
             const message = "Hola! Quiero comprar la app ($25.000) y recibir el APK";
@@ -254,7 +254,7 @@
             const cleanNumber = document.getElementById('wa-number-input').value.replace(/\D/g, '');
             if (cleanNumber.length >= 10) {
                 WHATSAPP_NUMBER = cleanNumber;
-                localStorage.setItem('pausapay_wa', cleanNumber);
+                localStorage.setItem('MPOculto_wa', cleanNumber);
                 toggleConfigModal();
             }
         }
